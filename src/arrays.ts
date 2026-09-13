@@ -105,5 +105,20 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    // lets test for non-negative array first
+    if (values.every((num : number):boolean => num >= 0)){
+        return [...values, values.reduce((currentTotal:number,num:number)=>currentTotal+num,0,)]
+    } else {
+        // figure out how to inject positive... maybe slice then conjoin?
+        const negative_index:number = values.findIndex((value:number):boolean => value < 0);
+        
+        let positive_array:number[] = values.slice(0, negative_index);
+        const positive_number:number = positive_array.reduce(
+            (currentTotal:number, num:number) => currentTotal + num,
+            0,
+        );
+        let cloned = [...values];
+        cloned.splice(negative_index + 1, 0, positive_number);
+        return cloned;
+    }
 }
