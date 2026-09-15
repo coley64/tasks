@@ -1,3 +1,4 @@
+import { urlToHttpOptions } from "url";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 
@@ -6,7 +7,9 @@ import { Question, QuestionType } from "./interfaces/question";
  * that are `published`.
  */
 export function getPublishedQuestions(questions: Question[]): Question[] {
-    return [];
+    let return_questions : Question[] = questions.map((question : Question): Question => ({...question, 
+            options: [...question.options],}))
+    return return_questions.filter((question: Question): boolean => question.published === true);
 }
 
 /**
@@ -15,7 +18,12 @@ export function getPublishedQuestions(questions: Question[]): Question[] {
  * `expected`, and an empty array for its `options`.
  */
 export function getNonEmptyQuestions(questions: Question[]): Question[] {
-    return [];
+    let return_questions : Question[] = questions.map((question : Question): Question => ({...question, 
+            options: [...question.options]}))
+    return return_questions.filter((question: Question): boolean => 
+        question.body.length !== 0 &&
+        question.expected.length !== 0 &&
+        (question.type !== "multiple_choice_question" || question.options.length !== 0));
 }
 
 /***
