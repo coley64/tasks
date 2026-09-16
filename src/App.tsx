@@ -1,6 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { Counter } from "./components/Counter";
 
 function App(): React.JSX.Element {
     return (
@@ -9,37 +14,18 @@ function App(): React.JSX.Element {
                 UD CISC275 with React Hooks and TypeScript, edited by Nicholas
                 West in 2026! Hello World!
             </header>
-            <img
-                src="./assets/scaredy_cat.JPG"
-                alt="A funny picture of a (somewhat scared) cat."
-            />
-            To Do:
-            <ul>
-                <li> Assignment 3</li>
-                <li> Assignment 4</li>
-                <li> Assignment 5</li>
-            </ul>
-            <h1>Hi</h1>
-            <Button
-                onClick={() => {
-                    console.log("Hello World!");
-                }}
-            >
-                Log Hello World
-            </Button>
-            <Container>
-                <Row>
-                    <Col>
-                        <div
-                            style={{
-                                width: "100px",
-                                height: "100px",
-                                backgroundColor: "red",
-                            }}
-                        ></div>
-                    </Col>
-                </Row>
-            </Container>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr />
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
