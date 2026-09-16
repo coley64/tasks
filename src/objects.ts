@@ -47,7 +47,6 @@ export function isValid(question: Question, answer: string): boolean {
             (option: string): boolean => option === answer,
         );
     }
-    return false;
 }
 
 /**
