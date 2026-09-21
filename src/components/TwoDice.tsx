@@ -19,15 +19,21 @@ export function TwoDice(): React.JSX.Element {
         updateLeftDie(d6());
     }
 
-        function rollRightDice(): void {
+    function rollRightDice(): void {
         updateRightDie(d6());
     }
 
-    return <div>
+    return (
+        <div>
             <span data-testid="left-die">{diceOne}</span>
             <Button onClick={rollLeftDice}>Roll Left</Button>
             <Button onClick={rollRightDice}>Roll Right</Button>
             <span data-testid="right-die">{diceTwo}</span>
-            {(diceOne === diceTwo) ? ((diceOne === 1) ? <p>Lose</p> : <p>Win</p>) : undefined}
-            </div>
+            {diceOne === diceTwo ?
+                diceOne === 1 ?
+                    <p>Lose</p>
+                :   <p>Win</p>
+            :   undefined}
+        </div>
+    );
 }
