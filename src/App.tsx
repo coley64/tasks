@@ -12,6 +12,10 @@ function App(): React.JSX.Element {
                 UD CISC275 with React Hooks and TypeScript, edited by Nicholas
                 West in 2026! Hello World!
             </header>
+            <img
+                src="./assets/scaredy_cat.JPG"
+                alt="A funny picture of a (somewhat scared) cat."
+            />
             <hr></hr>
             <DoubleHalf></DoubleHalf>
             <hr></hr>
