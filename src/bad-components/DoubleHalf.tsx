@@ -4,10 +4,10 @@ import { Button } from "react-bootstrap";
 
 interface counterProps {
     dhValue: number;
-    setDhValue: (value:number)=>void;
+    setDhValue: (value: number) => void;
 }
 
-function Doubler({dhValue, setDhValue}:counterProps): React.JSX.Element {
+function Doubler({ dhValue, setDhValue }: counterProps): React.JSX.Element {
     return (
         <Button
             onClick={() => {
@@ -19,7 +19,7 @@ function Doubler({dhValue, setDhValue}:counterProps): React.JSX.Element {
     );
 }
 
-function Halver({dhValue, setDhValue}:counterProps): React.JSX.Element {
+function Halver({ dhValue, setDhValue }: counterProps): React.JSX.Element {
     return (
         <Button
             onClick={() => {

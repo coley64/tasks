@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
-import userEvent from "@testing-library/user-event";
+// import userEvent from "@testing-library/user-event";
 
 describe("Some HTML Elements are added.", () => {
     // test("(2 pts) There is a header", () => {
@@ -9,20 +9,18 @@ describe("Some HTML Elements are added.", () => {
     //     const header = screen.getByRole("heading");
     //     expect(header).toBeInTheDocument();
     // });
-
     // test("(2 pts) There is an image with alt text", () => {
     //     render(<App />);
     //     const image = screen.getByRole("img");
     //     expect(image).toBeInTheDocument();
     //     expect(image).toHaveAttribute("alt");
     // });
-
-//     test("(2 pts) There is a list with at least three elements", () => {
-//         render(<App />);
-//         const list = screen.getByRole("list");
-//         expect(list).toBeInTheDocument();
-//         expect(list.children.length).toBeGreaterThanOrEqual(3);
-//     });
+    //     test("(2 pts) There is a list with at least three elements", () => {
+    //         render(<App />);
+    //         const list = screen.getByRole("list");
+    //         expect(list).toBeInTheDocument();
+    //         expect(list.children.length).toBeGreaterThanOrEqual(3);
+    //     });
 });
 
 describe("(2 pts) Some basic CSS is added.", () => {
@@ -43,13 +41,11 @@ describe("(2 pts) Some Bootstrap Elements are added", () => {
     //     expect(button).toHaveClass("btn");
     //     expect(button).toHaveClass("btn-primary");
     // });
-
     // test("(2 pts) Not clicking the bootstrap button does not logs 'Hello World!'", () => {
     //     const consoleSpy = jest.spyOn(console, "log");
     //     render(<App />);
     //     expect(consoleSpy).not.toHaveBeenCalledWith("Hello World!");
     // });
-
     // test("(2 pts) Clicking the bootstrap button logs 'Hello World!'", () => {
     //     const consoleSpy = jest.spyOn(console, "log");
     //     render(<App />);

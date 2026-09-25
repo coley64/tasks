@@ -56,4 +56,4 @@ export function CycleHoliday(): React.JSX.Element {
             <Button onClick={nextSequentialHoliday}>Advance by Year</Button>
         </div>
     );
-} 
+}
