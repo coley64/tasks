@@ -10,16 +10,14 @@ export function GiveAttempts(): React.JSX.Element {
     }
 
     function useAttempts() {
-    const amount = modifyNumAttempts === ""
-        ? 1
-        : Number(modifyNumAttempts);
+        const amount = modifyNumAttempts === "" ? 1 : Number(modifyNumAttempts);
 
-    setRemainingAttempts((attempts) => attempts - amount);
+        setRemainingAttempts((attempts) => attempts - amount);
     }
 
     function gainAttempts() {
         setRemainingAttempts(
-            (attempts) => attempts + Number(modifyNumAttempts)
+            (attempts) => attempts + Number(modifyNumAttempts),
         );
         setModifyNumAttempts("");
     }
@@ -39,16 +37,11 @@ export function GiveAttempts(): React.JSX.Element {
 
             <div>Remaining Attempts = {remainingAttempts}</div>
 
-            <Button
-                onClick={useAttempts}
-                disabled={remainingAttempts <= 0}
-            >
+            <Button onClick={useAttempts} disabled={remainingAttempts <= 0}>
                 use
             </Button>
 
-            <Button onClick={gainAttempts}>
-                gain
-            </Button>
+            <Button onClick={gainAttempts}>gain</Button>
         </div>
     );
 }
